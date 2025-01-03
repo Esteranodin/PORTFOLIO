@@ -4,9 +4,9 @@ import Icon from './Icon.astro';
 ---
 
 <aside>
-	<h2>Interested in working together?</h2>
-	<CallToAction href="mailto:me@example.com">
-		Send Me a Message
+	<h2>Vous souhaitez que l'on travaille ensemble ? <br> Ou simplement me contacter ? </h2>
+	<CallToAction href="mailto:leseditionsedda@gmail.com">
+		Envoyez-moi un mail
 		<Icon icon="paper-plane-tilt" size="1.2em" />
 	</CallToAction>
 </aside>
@@ -27,7 +27,8 @@ import Icon from './Icon.astro';
 	h2 {
 		font-size: var(--text-xl);
 		text-align: center;
-		max-width: 15ch;
+		line-height: 4rem;
+		/* max-width: 15ch; */
 	}
 
 	@media (min-width: 50em) {

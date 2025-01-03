@@ -21,9 +21,13 @@ const { href } = Astro.props;
 		line-height: 1.1;
 		border-radius: 999rem;
 		overflow: hidden;
-		background: var(--gradient-stop-1);
+		background: var(--gradient-accent);
 		box-shadow: var(--shadow-md);
 		white-space: nowrap;
+	}
+	
+	a:nth-child(2) {
+		background: var(--gradient-accent-orange);
 	}
 
 	:global(.theme-dark) a {
@@ -41,6 +45,10 @@ const { href } = Astro.props;
 		background: var(--gradient-subtle);
 		box-shadow: var(--shadow-md);
 		white-space: nowrap;
+	}
+
+	:global(.theme-dark) a:nth-child(2) {
+		background: var(--gradient-stroke);
 	}
 
 	@media (min-width: 20em) {
@@ -71,7 +79,4 @@ const { href } = Astro.props;
 		}
 	}
 
-	a:nth-child(2) {
-		background: var(--gradient-stroke);
-	}
 </style>
