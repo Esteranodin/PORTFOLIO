@@ -1,10 +1,10 @@
 ---
 import { getCollection } from 'astro:content';
 
-// Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
+// Importation des layouts
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-// Component Imports
+// Importation des composants
 import CallToAction from '../components/CallToAction.astro';
 import Grid from '../components/Grid.astro';
 import Hero from '../components/Hero.astro';
@@ -30,14 +30,14 @@ const projects = (await getCollection('work'))
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
 				<Hero
-					title="Hello, my name is Jeanine White"
-					tagline="I am a Creative Developer who is currently based in Portland, Oregon."
+					title="Développeuse web // junior"
+					tagline="Actuellement en formation"
 					align="start"
 				>
 					<div class="roles">
-						<Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
-						<Pill><Icon icon="microphone-stage" size="1.33em" /> Speaker</Pill>
-						<Pill><Icon icon="pencil-line" size="1.33em" /> Writer</Pill>
+						<Pill><Icon icon="code" size="1.33em" />Dev</Pill>
+						<Pill><Icon icon="microphone-stage" size="1.33em" /></Pill>
+						<Pill><Icon icon="pencil-line" size="1.33em" /></Pill>
 					</div>
 				</Hero>
 
@@ -106,6 +106,8 @@ const projects = (await getCollection('work'))
 	</div>
 </BaseLayout>
 
+
+<!------------------------ CSS ------------------------->
 <style>
 	.hero {
 		display: flex;

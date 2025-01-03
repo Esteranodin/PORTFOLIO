@@ -5,7 +5,7 @@ interface Props {
 
 const { href } = Astro.props;
 ---
-
+<!-- boutons-->
 <a href={href}><slot /></a>
 
 <style>
@@ -21,7 +21,24 @@ const { href } = Astro.props;
 		line-height: 1.1;
 		border-radius: 999rem;
 		overflow: hidden;
-		background: var(--gradient-accent-orange);
+		background: var(--gradient-stop-1);
+		box-shadow: var(--shadow-md);
+		white-space: nowrap;
+	}
+
+	:global(.theme-dark) a {
+		position: relative;
+		display: flex;
+		place-content: center;
+		text-align: center;
+		padding: 0.56em 2em;
+		gap: 0.8em;
+		color: var(--accent-text-over);
+		text-decoration: none;
+		line-height: 1.1;
+		border-radius: 999rem;
+		overflow: hidden;
+		background: var(--gradient-subtle);
 		box-shadow: var(--shadow-md);
 		white-space: nowrap;
 	}
@@ -52,5 +69,9 @@ const { href } = Astro.props;
 			padding: 1.125rem 2.5rem;
 			font-size: var(--text-xl);
 		}
+	}
+
+	a:nth-child(2) {
+		background: var(--gradient-stroke);
 	}
 </style>
