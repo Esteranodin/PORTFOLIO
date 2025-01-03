@@ -5,6 +5,7 @@ changer taille div des cartes pins github
 et uasi les icones en haut 
 les backgrounds
 
+penser a renvoyer vers collectif nathan serval
 
 
 
