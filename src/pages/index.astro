@@ -30,23 +30,18 @@ const projects = (await getCollection("work"))
     <div class="wrapper stack gap-8 lg:gap-20">
       <header class="hero">
         <Hero
-          title="Développeuse web // junior"
+          title="Développeuse web // Junior"
           tagline="Actuellement en formation"
           align="start"
         >
           <div class="roles">
-            <Pill><Icon icon="code" size="1.33em" />Dev</Pill>
-            <Pill><Icon icon="microphone-stage" size="1.33em" /></Pill>
-            <Pill><Icon icon="pencil-line" size="1.33em" /></Pill>
+            <Pill><Icon icon="code" size="1.33em" /> Code </Pill>
+            <Pill><Icon icon="color-picker" size="1.33em" />Suite Adobe</Pill>
+            <Pill><Icon icon="pencil-line" size="1.33em" />Rédaction</Pill>
           </div>
         </Hero>
 
-        <img
-          alt="Jeanine White smiling in a red plaid shirt and tortoise shell glasses"
-          width="480"
-          height="620"
-          src="/assets/portrait.jpg"
-        />
+        <img alt="" width="480" height="620" src="/assets/portrait.jpg" />
       </header>
 
       <Skills />
@@ -55,11 +50,8 @@ const projects = (await getCollection("work"))
     <main class="wrapper stack gap-20 lg:gap-48">
       <section class="section with-background with-cta">
         <header class="section-header stack gap-2 lg:gap-4">
-          <h3>Selected Work</h3>
-          <p>
-            Take a look below at some of my featured work for clients from the
-            past few years.
-          </p>
+          <h3>Mes projets</h3>
+          <p>blablabla</p>
         </header>
 
         <div class="gallery">
@@ -76,7 +68,7 @@ const projects = (await getCollection("work"))
 
         <div class="cta">
           <CallToAction href="/work/">
-            View All
+            Tout voir
             <Icon icon="arrow-right" size="1.2em" />
           </CallToAction>
         </div>
@@ -84,22 +76,23 @@ const projects = (await getCollection("work"))
 
       <section class="section with-background bg-variant">
         <header class="section-header stack gap-2 lg:gap-4">
-          <h3>Mentions</h3>
+          <h3>Mes pins GitHub</h3>
           <p>
-            I have been fortunate enough to receive praise for my work in
-            several publications. Take a look below to learn more.
+            Mes repos GitHub préférés que j'ai choisi d'épingler sur mon profil
+            GitHub
           </p>
         </header>
 
         <div class="gallery">
           <Grid variant="small">
             {
-              [
-                "", "", "", "", "",
-              ].map((brand) => (
-                <li class="mention-card">
-                  <p>{brand}</p>
-                </li>
+              ["", "", "", "", "", ""].map((brand) => (
+                <a href="" target="_blank">
+                  <li class="mention-card">
+                    <p>{brand}</p>
+                    <img src="" />
+                  </li>
+                </a>
               ))
             }
           </Grid>
@@ -247,6 +240,7 @@ const projects = (await getCollection("work"))
     color: var(--gray-300);
     background: var(--gradient-subtle);
     box-shadow: var(--shadow-sm);
+    background-size: contain;
   }
 
   @media (min-width: 50em) {
@@ -259,8 +253,7 @@ const projects = (await getCollection("work"))
 
 <!-- a ce moment là dans la formation pas de react donc js -->
 <script>
-
-// en asynchrone les données ne sont récup que dans le try cash de cette fonction
+  // en asynchrone les données ne sont récup que dans le try cash de cette fonction
   async function ReposRecup() {
     try {
       const response = await fetch(
@@ -274,9 +267,8 @@ const projects = (await getCollection("work"))
       if (datas.length === 0) {
         throw new Error("Aucun repo épinglé trouvé");
       }
-// permet de recup les données dans une nouvelle fonction pour les afficher
+      // permet de recup les données dans une nouvelle fonction pour les afficher
       ReposDisplay(datas);
-
     } catch (error: any) {
       if (error.message === "Network response was not ok") {
         console.log("Your network may be down. Please try again.");
@@ -291,27 +283,24 @@ const projects = (await getCollection("work"))
 
   ReposRecup();
 
-  function ReposDisplay(datas) {
-	const mentionCards = document.querySelectorAll(".mention-card");
-	// console.log(datas);
-	// console.log(mentionCards);
-	
+  function ReposDisplay(
+    datas: { repo: string; link: string; image: string }[]
+  ) {
+    const mentionCards = document.querySelectorAll(".mention-card");
 
-	mentionCards.forEach((card, index) => {
-		// attention ne récup que l'enfant 1, cad le p, sur les trois enfant de la nodelist mentionCards
-		let titreRepo = card.childNodes[1];
-		// console.log(index);
-		
-		// console.log(titreRepo.innerText);
-		// console.log(datas[index].repo);
+    mentionCards.forEach((card, index) => {
+      // attention ne récup que l'enfant 1, cad le p, sur les trois enfant de la nodelist mentionCards
 
-		if(datas[index] !== undefined){
-			titreRepo.innerText = datas[index].repo;
-		}
-		
-		
-	})
-	
-	
+      let lienRepo = card.parentNode as HTMLAnchorElement;
+
+      console.log(lienRepo);
+
+      if (datas[index] !== undefined) {
+        // titreRepo.innerText = datas[index].repo;
+        lienRepo.href = datas[index].link;
+        (card as HTMLElement).style.backgroundImage =
+          `url(${datas[index].image})`;
+      }
+    });
   }
 </script>

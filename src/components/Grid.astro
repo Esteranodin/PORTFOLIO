@@ -1,6 +1,4 @@
 ---
-import { number } from "astro:schema";
-
 interface Props {
   variant?: "offset" | "small";
 }
@@ -8,7 +6,7 @@ interface Props {
 const { variant } = Astro.props;
 ---
 
-<ul id = "repoGit"
+<ul 
   class:list={[
     "grid",
     { offset: variant === "offset", small: variant === "small" },
