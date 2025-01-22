@@ -36,12 +36,12 @@ const projects = (await getCollection("work"))
         >
           <div class="roles">
             <Pill><Icon icon="code" size="1.33em" /> Code </Pill>
-            <Pill><Icon icon="color-picker" size="1.33em" />Suite Adobe</Pill>
+            <Pill><Icon icon="color-picker" size="1.33em" />Graphisme</Pill>
             <Pill><Icon icon="pencil-line" size="1.33em" />Rédaction</Pill>
           </div>
         </Hero>
 
-        <img alt="" width="480" height="620" src="/assets/portrait.jpg" />
+        <img alt="logo de Marion Sabatier" width="480" height="620" src="/assets/portrait.jpg" />
       </header>
 
       <Skills />
@@ -122,7 +122,7 @@ const projects = (await getCollection("work"))
     object-fit: cover;
     object-position: top;
     border-radius: 1.5rem;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-sm);
   }
 
   @media (min-width: 50em) {
@@ -140,7 +140,7 @@ const projects = (await getCollection("work"))
     }
 
     .hero img {
-      aspect-ratio: 3 / 4;
+      aspect-ratio: 4 / 4;
       border-radius: 4.5rem;
       object-fit: cover;
     }
