@@ -1,12 +1,15 @@
-a la place du full stack mettre les langages figma tout ça ^^
+ mettre les langages figma tout ça ^^
 
 changer taille div des cartes pins github
 
-et uasi les icones en haut 
+
 les backgrounds
 
 penser a renvoyer vers collectif nathan serval
 
 
+link nav dans menu burger + menu burger
 
+Rajouter anim js 
 
+penser au att des images
