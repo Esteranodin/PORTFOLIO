@@ -1,113 +1,189 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-import ContactCTA from '../components/ContactCTA.astro';
-import Hero from '../components/Hero.astro';
+import ContactCTA from "../components/ContactCTA.astro";
 ---
 
-<BaseLayout title="Portfolio | Marion Sabatier" description="Portfolio de Marion Sabatier">
-	<div class="stack gap-20">
-		<main class="wrapper about">
-			<Hero
-				title="Parcours"
-				tagline=""
-			>
-			<!-- Parce qu'il paraît qu'il faut mettre une photo -->
-				<img
-					width="1153"
-					height="873"
-					src="/assets/at-work.jpg"
-					alt="Marion travaillant devant un ordinateur"
-				/>
-			</Hero>
+<BaseLayout
+  title="Portfolio | Marion Sabatier"
+  description="Portfolio de Marion Sabatier"
+>
+  <div class="stack gap-20">
+    <main class="wrapper about">
+      <div class="hero-container">
+        <img
+          src="/assets/at-work.jpg"
+          alt="Marion travaillant devant un ordinateur"
+        />
 
-			<section>
-				<h2 class="section-title">Universitaire</h2>
-				<div class="content">
-					<p>
-						Mon parcours universitaire reflète une curiosité insatiable, enfin mise à contribution avec le dév. ! <br>
-						Après une <strong>licence en histoire</strong>, j’ai choisi de faire un <strong>master en archéologie médiévale</strong>, puis un autre en édition du livre d'art, en particulier le livre d’artiste. C’est cette même curiosité qui me pousse aujourd’hui à suivre une formation en développement web, afin d’élargir mes compétences et de continuer à apprendre.
-					</p>
-					<p>
-						Mon parcours professionnel est tout aussi éclectique, allant de jobs étudiants à mon aventure en tant qu'auto-entrepreneuse. Ces expériences m’ont permis de développer une grande capacité d'adaptation et une bonne gestion de la diversité des tâches. J'ai appris à m’investir à fond dans ce que je fais, surtout quand un projet me passionne.
-					</p>				
-				</div>
+        <section>
+          <h2 class="section-title">Parcours universitaire</h2>
+          <div class="content">
+            <p>
+              🌱 Actuellement en formation pour devenir développeuse web <br />
+            </p>
+            <p>
+              🎓 Master 2 Édition d'Art & livre d'artiste <br />
+            </p>
 
-			</section>
-			<section>
-				<h2 class="section-title">Un peu plus perso</h2>
-				<div class="content">
-					<p>	Côté personnalité, je suis quelqu’un de calme dans l’adversité, mais mon impatience me pousse parfois à chercher rapidement des solutions. J’organise mes tâches pour avancer de manière efficace, même si je me laisse parfois distraire par la spontanéité qui fait aussi mon charme. J’adore apprendre chaque jour et voir le résultat de mes efforts.</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Skills</h2>
-				<div class="content">
-					<p>Aujourd’hui, je souhaite réintégrer le salariat, car j’ai à cœur de travailler au sein d’une équipe, d’échanger et de relever des défis ensemble. J’ai envie de partager mes compétences tout en continuant à apprendre aux côtés de collègues motivés.</p>
+            <h2 class="section-title">Parcours professionnel</h2>
+            <p>
+              ✨Éclectique : aventure d'auto-entrepreneuse aux à-côtés ou petits
+              jobs étudiants <br />
+            </p>
+            <p>
+              Ces expériences m'ont permis de développer une grande capacité
+              d'adaptation et une bonne gestion de la diversité des tâches. J'ai
+              appris à m'investir pleinement dans ce que je fais, surtout
+              lorsqu'un projet me passionne.
+            </p>
+          </div>
+        </section>
 
-					<p>Un de mes projets dont je suis particulièrement fière est la mise en page d’un journal trimestriel distribué nationalement. C’est un travail que je trouve beau et qui me permet de montrer mon sens du détail et mon côté créatif.</p>
-				</div>
-			</section>
-		</main>
+        <section>
+          <h2 class="section-title">Plus perso</h2>
+          <div class="content">
+            <p>
+              ⚔️ J'ai un premier master en archéologie médiévale <br />
+              👀 Je suis hyper curieuse <br />
+            </p>
+            <p>
+              C'est cette curiosité qui me pousse aujourd'hui à suivre une
+              formation en développement web, afin d'élargir mes compétences et
+              de continuer à apprendre.
+            </p>
+          </div>
+        </section>
+        <section>
+          <h2 class="section-title">Skills</h2>
+          <div class="content">
+			<h3> Langages & paradigmes </h3>
+            <p> </p>
 
-		<ContactCTA />
-	</div>
+			<h3> Frameworks & bibliothèques </h3>
+			<p> </p>
+			
+			<h3> Outils & plateformes </h3>
+			<p> </p>
+       
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <ContactCTA />
+  </div>
 </BaseLayout>
 
 <style>
-	.about {
-		display: flex;
-		flex-direction: column;
-		gap: 3.5rem;
+  * {
+    background: var(--gray-999);
+  }
+
+  .hero-container {
+    margin-top: 5rem;
+  }
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    max-width: 65vw;
+    margin: 0 auto;
+  }
+
+  img {
+    margin-top: 0;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    color: var(--gray-50);
+  }
+
+  h2 {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+  }
+  
+  h2::after {
+	  content: "";
+	  position: absolute;
+	  left: 0;
+	  opacity: 0.5;
+	  width: 100%;
+	  height: 0.3em;
+	  bottom: 0.1em;
+	  background: var(--gradient-stop-1);
+	  z-index: -1;
 	}
 
-	img {
-		margin-top: 1.5rem;
-		border-radius: 1.3rem;
-		box-shadow: var(--shadow-sm);
+	h3 {
+	  font-size: var(--text-xl);
+	  position: relative;
+	  display: inline-block;
+	  color: var(--gray-50);
 	}
 
-	section {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		color: var(--gray-50);
-	}
+  .section-title {
+    grid-column-start: 1;
+    font-size: var(--text-2xl);
+    color: var(--gray-0);
+    margin: 1.5rem 0;
+  }
 
-	.section-title {
-		grid-column-start: 1;
-		font-size: var(--text-xl);
-		color: var(--gray-0);
-	}
+  .content {
+    grid-column: 2 / 3;
+    text-align: left;
+  }
 
-	.content {
-		grid-column: 2 / 3;
-	}
+  .content :global(a) {
+    text-decoration: 1px solid underline transparent;
+    text-underline-offset: 0.25em;
+    transition: text-decoration-color var(--theme-transition);
+  }
 
-	.content :global(a) {
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
-	}
+  .content :global(a:hover),
+  .content :global(a:focus) {
+    text-decoration-color: currentColor;
+  }
 
-	.content :global(a:hover),
-	.content :global(a:focus) {
-		text-decoration-color: currentColor;
-	}
+  @media (min-width: 50em) {
+    img {
+      border-radius: 1.5rem;
+      max-width: 280px;
+      float: right;
+      margin-left: 2rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+    }
 
-	@media (min-width: 50em) {
-		.about {
-			display: grid;
-			grid-template-columns: 1fr 60% 1fr;
-		}
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 75% 1fr;
+    }
 
-		.about > :global(:first-child) {
-			grid-column-start: 2;
-		}
+    .about > :global(:first-child) {
+      grid-column-start: 2;
+    }
 
-		section {
-			display: contents;
-			font-size: var(--text-lg);
-		}
-	}
+    .content p {
+      margin-bottom: 1rem;
+    }
+
+    section {
+      display: contents;
+      font-size: var(--text-lg);
+    }
+  }
 </style>

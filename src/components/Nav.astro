@@ -13,11 +13,8 @@ const textLinks: { label: string; href: string }[] = [
 /** Icon links to social media — edit these with links to your profiles! */
 const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[] = [
 	{ label: 'GitHub', href: 'https://github.com/Esteranodin', icon: 'github-logo' },
-	{ label: 'YouTube', href: 'https://www.linkedin.com/in/marion-sabatier-51a577171/', icon: 'linkedin-logo' },
-	// { label: 'Twitter', href: 'https://twitter.com/me', icon: 'twitter-logo' },
-	// { label: 'Twitch', href: 'https://twitch.tv/me', icon: 'twitch-logo' },
-	// { label: 'CodePen', href: 'https://codepen.io/me', icon: 'codepen-logo' },
-	// { label: 'dribbble', href: 'https://dribbble.com/me', icon: 'dribbble-logo' },
+	{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/marion-sabatier-51a577171/', icon: 'linkedin-logo' },	
+	{ label: 'Email', href: 'mailto:leseditionsedda@gmail.com', icon: 'paper-plane-tilt' },
 ];
 
 /** Test if a link is pointing to the current page. */
@@ -38,8 +35,8 @@ const isCurrentPage = (href: string) => {
 		<menu-button>
 			<template>
 				<button class="menu-button" aria-expanded="false">
-					<span class="sr-only">Menu</span>
-					<Icon icon="list" />
+					<!-- <span class="sr-only">Menu</span> -->
+					<!-- <Icon icon="list" /> -->
 				</button>
 			</template>
 		</menu-button>
@@ -225,7 +222,7 @@ const isCurrentPage = (href: string) => {
 	}
 
 	.menu-footer {
-		--icon-size: var(--text-xl);
+		--icon-size: var(--text-xll);
 		--icon-padding: 0.5rem;
 
 		display: flex;
@@ -255,6 +252,11 @@ const isCurrentPage = (href: string) => {
 	.social:hover,
 	.social:focus {
 		color: var(--accent-text-over);
+	}
+
+	:root.theme-dark .social:hover,
+	:root.theme-dark .social:focus {
+		color: var(--gray-100);
 	}
 
 	.theme-toggle {

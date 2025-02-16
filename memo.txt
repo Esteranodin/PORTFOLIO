@@ -1,18 +1,17 @@
- mettre les langages figma tout ça ^^
+FINIR bouton cv
 
-changer taille div des cartes pins github
+faire un lien vers about en dessous skills du genre en savoir plus
 
+mettre les langages figma tout ça ^^
 
-les backgrounds
+les backgrounds comme about
 
 penser a renvoyer vers collectif nathan serval
 
+tout faire dans work
 
 link nav dans menu burger + menu burger
 
-Rajouter anim js 
+penser au at des images
 
-penser au att des images
-
-
-grossir icones git et in ? 
+Rajouter anim js Gsap

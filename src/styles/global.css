@@ -16,10 +16,10 @@
 	--gray-999_40: hsla(var(--gray-999-basis), 0.4);
 	--gray-999: #F1EDE9;
 
-	--accent-light: #FCDFA6  ;
+	--accent-light:  #0DAB76 ;
 	--accent-regular: #F15BB5;
 	--accent-dark: #071E22;
-	--accent-overlay: #0DAB76(281, 81%, 36%, 0.33);
+	--accent-overlay: #FCDFA6(281, 81%, 36%, 0.33);
 	--accent-subtle-overlay: var(--accent-overlay);
 	--accent-text-over: var(--gray-999);
 
@@ -57,6 +57,7 @@
 	--text-md: 1.125rem;
 	--text-lg: 1.25rem;
 	--text-xl: 1.625rem;
+	--text-xll: 1.825rem;
 	--text-2xl: 2.125rem;
 	--text-3xl: 2.625rem;
 	--text-4xl: 3.5rem;
