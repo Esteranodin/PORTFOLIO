@@ -76,8 +76,7 @@ const cvLink: { label: string; href: string; icon: keyof typeof iconPaths }[] =
         <header class="section-header stack gap-2 lg:gap-4">
           <h3>Mes projets</h3>
           <p>
-            Neque viverra justo nec ultrices dui. Est ultricies integer quis
-            auctor elit.
+         Un pêle-mêle de mes projets réalisés en formation et certains perso 
           </p>
         </header>
 
@@ -92,6 +91,7 @@ const cvLink: { label: string; href: string; icon: keyof typeof iconPaths }[] =
             }
           </Grid>
         </div>
+      </section>
 
         <div class="cta">
           <CallToAction href="/work/">
@@ -99,7 +99,6 @@ const cvLink: { label: string; href: string; icon: keyof typeof iconPaths }[] =
             <Icon icon="arrow-right" size="1.2em" />
           </CallToAction>
         </div>
-      </section>
 
       <section class="section with-background bg-variant">
         <header class="section-header stack gap-2 lg:gap-4">
@@ -134,20 +133,69 @@ const cvLink: { label: string; href: string; icon: keyof typeof iconPaths }[] =
 <!------------------------ CSS ------------------------->
 <style>
   .cv-link a {
-    display: inline-flex;
-    align-items: center;
+    color: var(--accent-regular);
     text-decoration: none;
-    color: var(--gray-999);
-    transition: color 0.2s ease;
-    padding: 0.3rem;
-    border: 1px solid var(--gray-800);
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    align-items: center;
+    float: left;
+    transition: 0.5s linear;
+    position: relative;
+    padding: 1rem;
+    background: transparent;
+    font-weight: 900;
+    font-size: var(--text-xll);
+  }
+
+  .cv-link a:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 100%;
     border-radius: 999rem;
-    background: var(--accent-regular);
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid transparent;
+    box-sizing: border-box;
+    transform: translateX(100%);
+  }
+
+  .cv-link a:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 999rem;
+    border-top: 4px solid transparent;
+    border-right: 4px solid transparent;
+    box-sizing: border-box;
+    transform: translateX(-100%);
+  }
+
+  .cv-link a:hover:before {
+    border-color: var(--gray-700);
+    height: 100%;
+    transform: translateX(0);
+    transition:
+      0.2s transform linear,
+      0.2s height linear 0.3s;
+  }
+
+  .cv-link a:hover:after {
+    border-color: var(--gray-100);
+    height: 100%;
+    transform: translateX(0);
+    transition:
+      0.2s transform linear,
+      0.1s height linear 0.5s;
   }
 
   .cv-link a:hover {
     color: var(--gray-0);
-    background: var(--accent-overlay);
   }
 
   .hero {
@@ -292,6 +340,7 @@ const cvLink: { label: string; href: string; icon: keyof typeof iconPaths }[] =
 
     .cta {
       grid-area: cta;
+      width: 50%;
     }
   }
 

@@ -1,4 +1,5 @@
 ---
+import CallToAction from './CallToAction.astro';
 import Icon from './Icon.astro';
 ---
 
@@ -18,6 +19,12 @@ import Icon from './Icon.astro';
 		<h2>Expérience</h2>
 		<p>Forte de plusieurs années d'expérience, je peux mettre à profit mes <em>soft skills</em>.</p>
 	</div>
+	<div class="cta">
+		<CallToAction href="/about/">
+		  En savoir plus
+		  <Icon icon="arrow-right" size="1.2em" />
+		</CallToAction>
+	  </div>
 </section>
 
 <style>
