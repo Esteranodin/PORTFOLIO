@@ -1,8 +1,72 @@
 ---
-import Hero from '../components/Hero.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from "../components/Hero.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Not Found" description="404 Error — this page was not found">
-	<Hero title="Page Not Found" tagline="Not found" />
-</BaseLayout>
+  <Hero
+    title="🚀 Oups ! Cette page a pris la fuite..."
+    tagline="404 // Page Not found"
+  />
+
+  <body class="wrapper stack gap-20 lg:gap-48">
+    <section class="wrapper stack gap-8">
+      <div class="error-404">
+        <p>
+          Il semble que la page que vous cherchez soit en voyage ou ait disparu
+          dans les méandres du web. Peut-être a-t-elle été déplacée ou tout
+          simplement n'a-t-elle jamais existé.
+        </p>
+        <div>
+          <h3>
+            Ne vous inquiétez pas, nous allons vous aider à revenir sur le bon
+            chemin !
+          </h3>
+          <a href="/"> Retour à l'accueil</a>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .error-404 {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        max-width: 800px;
+        font-size: 1.5rem;
+        margin: 2rem auto;
+        text-align: center;
+        align-items: center;
+      }
+
+      a {
+        display: inline-block;
+        padding: 1rem 2rem;
+        background-color: var(--gradient-stop-1);
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        margin: 2rem 0;
+        transition: background-color 0.3s ease;
+      }
+
+      .error-404 a:hover {
+        background-color: var(--accent-regular);
+      }
+
+      @media (max-width: 768px) {
+        .error-404 {
+          padding: 1rem;
+        }
+
+        .error-404 p {
+          font-size: 1rem;
+        }
+
+        .error-404 h3 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </body></BaseLayout
+>

@@ -15,21 +15,21 @@ import PortfolioPreview from "../components/PortfolioPreview.astro";
 // Page section components
 import ContactCTA from "../components/ContactCTA.astro";
 import Skills from "../components/Skills.astro";
-import type { iconPaths } from "../components/IconPaths";
+import Cv from "../components/Cv.astro";
 
 // Content Fetching: List four most recent work projects
 const projects = (await getCollection("work"))
   .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
   .slice(0, 4);
 
-const cvLink: { label: string; href: string; icon: keyof typeof iconPaths }[] =
-  [
-    {
-      label: "cv",
-      href: "/assets/curriculum-vitæ_dev.pdf",
-      icon: "cv",
-    },
-  ];
+// const cvLink: { label: string; href: string; icon: keyof typeof iconPaths }[] =
+//   [
+//     {
+//       label: "cv",
+//       href: "/assets/curriculum-vitæ_dev.pdf",
+//       icon: "cv",
+//     },
+//   ];
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
@@ -48,15 +48,7 @@ const cvLink: { label: string; href: string; icon: keyof typeof iconPaths }[] =
             <Pill><Icon icon="code" size="1.33em" /> Code </Pill>
             <Pill><Icon icon="color-picker" size="1.33em" />Graphisme</Pill>
             <Pill><Icon icon="pencil-line" size="1.33em" />Rédaction</Pill>
-            <p class="cv-link">
-              {
-                cvLink.map((link) => (
-                  <a href={link.href} target="_blank" rel="noopener noreferrer">
-                    <Icon icon={link.icon} size="1.33em" /> {link.label}
-                  </a>
-                ))
-              }
-            </p>
+            <Cv>
           </div>
         </Hero>
         <img
@@ -129,73 +121,7 @@ const cvLink: { label: string; href: string; icon: keyof typeof iconPaths }[] =
 
 <!------------------------ CSS ------------------------->
 <style>
-  .cv-link a {
-    color: var(--accent-regular);
-    text-decoration: none;
-    cursor: pointer;
-    border: none;
-    background: transparent;
-    align-items: center;
-    float: left;
-    transition: 0.5s linear;
-    position: relative;
-    padding: 1rem;
-    background: transparent;
-    font-weight: 900;
-    font-size: var(--text-xll);
-  }
-
-  .cv-link a:before {
-    position: absolute;
-    content: "";
-    left: 0;
-    bottom: 0;
-    height: 4px;
-    width: 100%;
-    border-radius: 999rem;
-    border-bottom: 4px solid transparent;
-    border-left: 4px solid transparent;
-    box-sizing: border-box;
-    transform: translateX(100%);
-  }
-
-  .cv-link a:after {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    border-radius: 999rem;
-    border-top: 4px solid transparent;
-    border-right: 4px solid transparent;
-    box-sizing: border-box;
-    transform: translateX(-100%);
-  }
-
-  .cv-link a:hover:before {
-    border-color: var(--gray-700);
-    height: 100%;
-    transform: translateX(0);
-    transition:
-      0.2s transform linear,
-      0.2s height linear 0.3s;
-  }
-
-  .cv-link a:hover:after {
-    border-color: var(--gray-100);
-    height: 100%;
-    transform: translateX(0);
-    transition:
-      0.2s transform linear,
-      0.1s height linear 0.5s;
-  }
-
-  .cv-link a:hover {
-    color: var(--gray-0);
-  }
-
-  .hero {
+   .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
