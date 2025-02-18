@@ -1,5 +1,6 @@
-Rajouter lien portfolio sur cv
-
+CV = Rajouter lien portfolio sur cv
++ Mettre MysQQL et PhpMyAdmin dans les outils
+Rajouter Nextjs
 
 
 ??? les backgrounds comme about ???
@@ -14,7 +15,6 @@ penser a renvoyer vers collectif nathan serval
 
 penser au at des images
 
-
-mettre les langages figma tout ça ^^
-faire theme clair des anim js
 Rajouter anim js
+
+Soucoupe volante

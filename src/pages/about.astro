@@ -1,7 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ContactCTA from "../components/ContactCTA.astro";
-import Icon from "../components/Icon.astro";
+import Technos from "../components/Technos.astro";
+import Tools from "../components/Tools.astro";
+import Design from "../components/Design.astro";
 ---
 
 <BaseLayout
@@ -45,66 +47,42 @@ import Icon from "../components/Icon.astro";
           <div class="content">
             <p>
               ⚔️ J'ai un premier master en archéologie médiévale <br />
-              👀 Je suis hyper curieuse <br />
+              👀 Je suis hyper curieuse
             </p>
             <p>
               C'est cette curiosité qui me pousse aujourd'hui à suivre une
               formation en développement web, afin d'élargir mes compétences et
               de continuer à apprendre.
             </p>
+            <p>
+              👨‍💻 Je fais partie du collectif &nbsp;<a href="https://www.latelier-serval.fr/le-collectif/" target="_blank"><em> Atelier Serval</em></a><br />
+              📰 J'édite le journal &nbsp;<a href="https://journal-labreche.fr/" target="_blank"><em>La Brèche </em></a>
+            </p>
           </div>
         </section>
 
         <section>
-        <h2 class="section-title">Skills</h2>
+          <h2 class="section-title">Technos</h2>
 
-        <div class="content">
+          <div class="content">
+
+            <h3>Frameworks & bibliothèques</h3>
             <div class="skills-container">
-              <h3>Langages & paradigmes</h3>
-              
-          </div>
-
-          <h3>Frameworks & bibliothèques</h3>
-          <div class="skills-container">
-
-              <div class="light-button">
-                <button class="bt">
-                  <div class="light-holder">
-                    <div class="dot"></div>
-                    <div class="light"></div>
-                  </div>
-                  <div class="button-holder">
-                    <img
-                      class="icon"
-                      src="/assets/icon/symfony.svg"
-                      alt="logo de Symfony"
-                    />
-                  </div>
-                </button>
-              </div>
-              <div class="light-button">
-                <button class="bt">
-                  <div class="light-holder">
-                    <div class="dot"></div>
-                    <div class="light"></div>
-                  </div>
-                  <div class="button-holder">
-                    <img
-                      class="icon"
-                      src="/assets/icon/tailwind.svg"
-                      alt="logo de Tailwind"
-                    />
-                  </div>
-                </button>
-              </div>
-          </div>
-
-          <div class="skills-container">
+              <Technos />
+            </div>
+            
             <h3>Outils & plateformes</h3>
-            <p></p>
+            <div class="skills-container">
+              <Tools />
+            </div>
+            
+            <h3>Design</h3>
+            <div class="skills-container">
+              <Design />
+            </div>
           </div>
-        </div>
         </section>
+      </div>
     </main>
 
     <ContactCTA />
@@ -116,9 +94,25 @@ import Icon from "../components/Icon.astro";
     background: var(--gray-999);
   }
 
+  .skills-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+    max-width: 100%;
+  }
+
+  .skills-container :global(img) {
+    height: 80px; 
+    max-width: none;
+  }
+
   .hero-container {
     margin-top: 5rem;
   }
+
   .about {
     display: flex;
     flex-direction: column;
@@ -221,98 +215,20 @@ import Icon from "../components/Icon.astro";
       display: contents;
       font-size: var(--text-lg);
     }
-  }
 
-  /* ----------- boutons skills ----------------- */
-
+    @media (max-width: 768px) {
   .skills-container {
-    display: flex;
-    flex-direction: row; 
-    justify-content: flex-start;
-    gap: 2rem;
-    margin: 2rem 0;
+    justify-content: center;
+    gap: 0.8rem;
+    margin: 1rem 0;
   }
+}
 
-  .icon {
-    justify-self: center;
-    display: flex;
-    margin: 0;
-    fill: #0f0f0f;
-    transition: 300ms;
-    z-index: 1;
-    width: 100%;
-  }
-
-  .light-button button.bt {
-    margin: 2rem 0;
-    position: relative;
-    height: 150px;
-    display: flex;
-    align-items: flex-end;
-    outline: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-
-  .light-button button.bt .button-holder {
-    display: flex;
-    flex-direction: column;
-    width: 100px;
-    background-color: var(--accent-overlay);
-    color: var(--accent-overlay);
-    transition: 300ms;
-    outline: var(--accent-overlay) 3px solid;
-    outline-offset: 20px;
-    border-radius: 1.5rem;
-  }
-
-  .light-button button.bt .light-holder {
-    position: absolute;
-    height: 170px;
-    width: 100px;
-    display: flex;
+@media (max-width: 480px) {
+  .skills-container {
     flex-direction: column;
     align-items: center;
+    gap: 0.5rem;
   }
-
-  .light-button button.bt .light-holder .dot {
-    position: absolute;
-    top: 0;
-    width: 1rem;
-    height: 1rem;
-    background-color: #272525;
-    border-radius: 10px;
-    z-index: 3;
-  }
-
-  .light-button button.bt .light-holder .light {
-    position: absolute;
-    top: 0;
-    width: 200px;
-    height: 200px;
-    clip-path: polygon(50% 0%, 25% 100%, 75% 100%);
-    background: transparent;
-  }
-
-  .light-button button.bt:hover .button-holder img {
-    fill: rgb(224, 242, 88, 1);
-  }
-
-  .light-button button.bt:hover .button-holder {
-    color: rgb(224, 242, 88);
-    outline: rgb(224, 242, 88, 1) 2px solid;
-    outline-offset: 2px;
-  }
-
-  .light-button button.bt:hover .light-holder .light {
-    background: rgb(255, 255, 255);
-    background: linear-gradient(
-      180deg,
-      rgb(224, 242, 88, 1) 0%,
-      rgba(255, 255, 255, 0) 75%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    z-index: 2;
   }
 </style>

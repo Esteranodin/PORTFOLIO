@@ -1,0 +1,139 @@
+---
+const iconLinks: { label: string; href: string }[] = [
+  { label: "Canva", href: "/assets/icon/canva.svg" },
+  { label: "Figma", href: "/assets/icon/figma.svg" },
+  { label: "Indesign", href: "/assets/icon/indesign.svg" },
+  { label: "Illustrator", href: "/assets/icon/illustrator.svg" },
+  { label: "Photoshop", href: "/assets/icon/photoshop.svg" },
+
+];
+---
+
+{
+  iconLinks.map(({ label, href }) => (
+    <div class="light-button">
+      <button class="bt">
+        <div class="light-holder">
+          <div class="dot" />
+          <div class="light" />
+        </div>
+        <div class="button-holder">
+          <img class="icon" src={href} alt={label} />
+        </div>
+      </button>
+    </div>
+  ))
+}
+
+
+<style>
+  /* ----------- boutons skills ----------------- */
+
+  .icon {
+    justify-self: center;
+    display: flex;
+    margin: 0;
+    fill: #0f0f0f;
+    transition: 300ms;
+    z-index: 1;
+    width: 100%;
+    border-radius: 1.5rem;
+    max-height: 100px;
+    /* box-shadow: var(--shadow-sm); */
+
+  }
+
+  .light-button button.bt {
+    margin: 2rem 0;
+    position: relative;
+    height: 150px;
+    display: flex;
+    align-items: flex-end;
+    outline: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .light-button button.bt .button-holder {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    background-color: var(--accent-overlay);
+    color: var(--accent-overlay);
+    transition: 300ms;
+    outline: var(--accent-overlay) 3px solid;
+    outline-offset: 20px;
+    border-radius: 1.5rem;
+  }
+
+  .light-button button.bt .light-holder {
+    position: absolute;
+    height: 170px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .light-button button.bt .light-holder .dot {
+    position: absolute;
+    top: 0;
+    width: 1rem;
+    height: 1rem;
+    background-color: #272525;
+    border-radius: 10px;
+    z-index: 3;
+  }
+
+  .light-button button.bt .light-holder .light {
+    position: absolute;
+    top: 0;
+    width: 200px;
+    height: 200px;
+    clip-path: polygon(50% 0%, 25% 100%, 75% 100%);
+    background: transparent;
+  }
+
+  .light-button button.bt:hover .button-holder img {
+    fill: rgb(215, 42, 15, 1);
+  }
+
+  .light-button button.bt:hover .button-holder {
+    color: rgb(225, 22, 140);
+    outline: rgb(225, 22, 140, 1) 2px solid;
+    outline-offset: 2px;
+  }
+
+  .light-button button.bt:hover .light-holder .light {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      180deg,
+      rgb(225, 22, 140) 0%,
+      rgba(255, 255, 255, 0) 75%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    z-index: 2;
+  }
+
+  :root.theme-dark .light-button button.bt:hover .button-holder img {
+    fill: rgb(224, 242, 88, 1);
+  }
+
+  :root.theme-dark .light-button button.bt:hover .button-holder {
+    color: rgb(224, 242, 88);
+    outline: rgb(224, 242, 88, 1) 2px solid;
+    outline-offset: 2px;
+  }
+
+  :root.theme-dark .light-button button.bt:hover .light-holder .light {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      180deg,
+      rgb(224, 242, 88, 1) 0%,
+      rgba(255, 255, 255, 0) 75%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    z-index: 2;
+  }
+</style>
