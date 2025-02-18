@@ -1,98 +1,220 @@
 ---
 import Grid from "./Grid.astro";
+
+interface GitRepo {
+  repo: string;
+  link: string;
+  image: string;
+  description: string;
+  language: string;
+  languageColor: string;
+}
+
+const initialRepos: GitRepo[] = new Array(6).fill({
+  repo: "",
+  link: "",
+  image: "",
+  description: "",
+  language: "",
+  languageColor: "",
+});
 ---
 
-
+<ul class="gallery">
   <Grid variant="small">
     {
-      ["", "", "", "", "", ""].map((brand: string) => (
-        <a href="" target="_blank">
-          <li class="mention-card">
-            <p>{brand}</p>
-            <img src="" />
-          </li>
-        </a>
+      initialRepos.map((data) => (
+        <li class="repo-container flex-col " data-repo-card>
+          <h5 class="repo-name">{data.repo}</h5>
+          <div class="mention-card">
+            <div class="card-background">
+              <img
+                src={data.image}
+                alt={`${data.repo} preview`}
+                class="repo-image"
+              />
+              <div class="card-overlay">
+                <p class="repo-description">{data.description}</p>
+              </div>
+              <div class="language-info">
+                <span
+                  class="language-dot"
+                  style={`background-color: ${data.languageColor}`}
+                />
+                <span class="language-name">{data.language}</span>
+              </div>
+            </div>
+          </div>
+        </li>
       ))
     }
   </Grid>
-
-
+</ul>
 
 <style>
-
-
-  .mention-card {
+  .repo-container {
     display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 80%;
+ }
+ 
+  .mention-card {
+    /* position: relative; */
     height: 12rem;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: 1px solid var(--gray-800);
-    border-radius: 1.5rem;
-    color: var(--gray-300);
-    background: var(--gradient-subtle);
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid var(--gray-900);
     box-shadow: var(--shadow-sm);
-    background-size: cover;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+  }
+
+  .mention-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .repo-name {
+    font-weight: 600;
+    font-size: var(--text-md);
+  }
+
+  .repo-description {
+    font-size: var(--text-sm);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: var(--gray-999);
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .language-info {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--gray-700);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    z-index: 2;
+  }
+
+  .language-dot {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+  }
+
+  .card-background {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-start; 
+  }
+
+  .card-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: var(--gray-0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .mention-card:hover .card-overlay {
+    opacity: 1;
+  }
+
+  .mention-card:hover .repo-image {
+    opacity: 0.2;
   }
 
   @media (min-width: 50em) {
     .mention-card {
-      border-radius: 1.5rem;
       height: 15rem;
     }
   }
+  
 </style>
 
 <!--  ======================== a ce moment là dans la formation pas de react donc js ==============================  -->
 <!--     en asynchrone les données ne sont récup que dans le try cash de cette fonction  -->
 <script>
-  async function ReposRecup() {
+  interface GitRepo {
+    repo: string;
+    link: string;
+    image: string;
+    description: string;
+    language: string;
+    languageColor: string;
+  }
+
+  async function reposRecup() {
     try {
       const response = await fetch(
         "https://gh-pinned-repos-tsj7ta5xfhep.deno.dev/?username=Esteranodin"
       );
+
       if (!response.ok) {
         throw new Error("Réponse réseau erronée");
       }
-      const datas = await response.json();
 
-      if (datas.length === 0) {
+      const repos = await response.json();
+
+      if (!repos.length) {
         throw new Error("Aucun repo épinglé trouvé");
       }
-      // permet de recup les données dans une nouvelle fonction pour les afficher
-      ReposDisplay(datas);
+
+      updateRepoCards(repos);
     } catch (error: any) {
-      if (error.message === "Network response was not ok") {
-        console.log("Your network may be down. Please try again.");
-      } else if (error.message === "No pinned repos found") {
-        console.log("No pinned repos found");
-      } else {
-        console.log("Error fetching repos");
-      }
-      console.error("Error fetching repos:", error);
+      console.error("Erreur lors de la récupération des repos:", error.message);
     }
   }
 
-  ReposRecup();
+  function updateRepoCards(repos: GitRepo[]) {
+    const cards = document.querySelectorAll("[data-repo-card]");
 
-  function ReposDisplay(
-    datas: { repo: string; link: string; image: string }[]
-  ) {
-    const mentionCards = document.querySelectorAll(".mention-card");
+    cards.forEach((card, index) => {
+      if (!repos[index]) return;
 
-    mentionCards.forEach((card, index) => {
-      // attention ne récup que l'enfant 1, cad le p, sur les trois enfant de la nodelist mentionCards
+      const name = card.querySelector(".repo-name") as HTMLParagraphElement;
+      const description = card.querySelector(
+        ".repo-description"
+      ) as HTMLParagraphElement;
+      const languageDot = card.querySelector(
+        ".language-dot"
+      ) as HTMLSpanElement;
+      const languageName = card.querySelector(
+        ".language-name"
+      ) as HTMLSpanElement;
+      const image = card.querySelector(".repo-image") as HTMLImageElement;
 
-      let lienRepo = card.parentNode as HTMLAnchorElement;
+      // Ajout du lien sur la carte entière
+      card.addEventListener("click", () => {
+        window.open(repos[index].link, "_blank", "noopener noreferrer");
+      });
 
-      console.log(lienRepo);
-
-      if (datas[index] !== undefined) {
-        // titreRepo.innerText = datas[index].repo;
-        lienRepo.href = datas[index].link;
-        (card as HTMLElement).style.backgroundImage =
-          `url(${datas[index].image})`;
+      if (name && description && languageDot && languageName && image) {
+        name.textContent = repos[index].repo;
+        description.textContent =
+          repos[index].description || "No description available";
+        languageDot.style.backgroundColor =
+          repos[index].languageColor || "#858585";
+        languageName.textContent = repos[index].language || "Unknown";
+        image.src = repos[index].image || "";
       }
     });
   }
+
+  // Démarrer la récupération des données
+  reposRecup();
 </script>

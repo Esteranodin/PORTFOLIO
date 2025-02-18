@@ -135,12 +135,12 @@ const projects = (await getCollection("work"))
   }
 
    .with-background {
-    /* position: relative; */
+    position: relative;
   }
 
   .with-background::before {
-    /* --hero-bg: var(--bg-image-subtle-2); */
-/* 
+    --hero-bg: var(--bg-image-subtle-2);
+
     content: "";
     position: absolute;
     pointer-events: none;
@@ -148,30 +148,30 @@ const projects = (await getCollection("work"))
     width: 100vw;
     aspect-ratio: calc(2.25 / var(--bg-scale));
     top: 0;
-    transform: translateY(-80%) translateX(-50%); */
-    /* background: */
-      /* url("/assets/backgrounds/noise.png") top center/220px repeat, */
+    transform: translateY(-80%) translateX(-50%);
+    background:
+      url("/assets/backgrounds/noise.png") top center/220px repeat,
       /* var(--hero-bg) center center / var(--bg-gradient-size) no-repeat, */
-        /* var(--gray-999); */
+        var(--gray-999);
     /* background-blend-mode: overlay, normal, normal, normal; */
-    /* mix-blend-mode: var(--bg-blend-mode); */
-    /* z-index: -1; */
+    mix-blend-mode: var(--bg-blend-mode);
+    z-index: -1;
   }
 
   .with-background.bg-variant::before {
-    /* --hero-bg: var(--bg-image-subtle-1); */
+    --hero-bg: var(--bg-image-subtle-1);
   }
 
   .section-header {
-    /* justify-self: center;
+    justify-self: center;
     text-align: center;
     max-width: 50ch;
     font-size: var(--text-md);
-    color: var(--gray-300); */
+    color: var(--gray-300);
   }
 
   .section-header h3 {
-    /* font-size: var(--text-2xl); */
+    font-size: var(--text-2xl);
   }
  
 
