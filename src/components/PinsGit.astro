@@ -1,0 +1,98 @@
+---
+import Grid from "./Grid.astro";
+---
+
+
+  <Grid variant="small">
+    {
+      ["", "", "", "", "", ""].map((brand: string) => (
+        <a href="" target="_blank">
+          <li class="mention-card">
+            <p>{brand}</p>
+            <img src="" />
+          </li>
+        </a>
+      ))
+    }
+  </Grid>
+
+
+
+<style>
+
+
+  .mention-card {
+    display: flex;
+    height: 12rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid var(--gray-800);
+    border-radius: 1.5rem;
+    color: var(--gray-300);
+    background: var(--gradient-subtle);
+    box-shadow: var(--shadow-sm);
+    background-size: cover;
+  }
+
+  @media (min-width: 50em) {
+    .mention-card {
+      border-radius: 1.5rem;
+      height: 15rem;
+    }
+  }
+</style>
+
+<!--  ======================== a ce moment là dans la formation pas de react donc js ==============================  -->
+<!--     en asynchrone les données ne sont récup que dans le try cash de cette fonction  -->
+<script>
+  async function ReposRecup() {
+    try {
+      const response = await fetch(
+        "https://gh-pinned-repos-tsj7ta5xfhep.deno.dev/?username=Esteranodin"
+      );
+      if (!response.ok) {
+        throw new Error("Réponse réseau erronée");
+      }
+      const datas = await response.json();
+
+      if (datas.length === 0) {
+        throw new Error("Aucun repo épinglé trouvé");
+      }
+      // permet de recup les données dans une nouvelle fonction pour les afficher
+      ReposDisplay(datas);
+    } catch (error: any) {
+      if (error.message === "Network response was not ok") {
+        console.log("Your network may be down. Please try again.");
+      } else if (error.message === "No pinned repos found") {
+        console.log("No pinned repos found");
+      } else {
+        console.log("Error fetching repos");
+      }
+      console.error("Error fetching repos:", error);
+    }
+  }
+
+  ReposRecup();
+
+  function ReposDisplay(
+    datas: { repo: string; link: string; image: string }[]
+  ) {
+    const mentionCards = document.querySelectorAll(".mention-card");
+
+    mentionCards.forEach((card, index) => {
+      // attention ne récup que l'enfant 1, cad le p, sur les trois enfant de la nodelist mentionCards
+
+      let lienRepo = card.parentNode as HTMLAnchorElement;
+
+      console.log(lienRepo);
+
+      if (datas[index] !== undefined) {
+        // titreRepo.innerText = datas[index].repo;
+        lienRepo.href = datas[index].link;
+        (card as HTMLElement).style.backgroundImage =
+          `url(${datas[index].image})`;
+      }
+    });
+  }
+</script>
