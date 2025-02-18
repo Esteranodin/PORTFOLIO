@@ -59,12 +59,9 @@ const cvLink: { label: string; href: string; icon: keyof typeof iconPaths }[] =
             </p>
           </div>
         </Hero>
-
         <img
           alt="logo de Marion Sabatier"
-          width="400"
-          height="600"
-          src="/assets/portrait.jpg"
+          src="/assets/logo.png"
         />
       </header>
 
@@ -76,7 +73,7 @@ const cvLink: { label: string; href: string; icon: keyof typeof iconPaths }[] =
         <header class="section-header stack gap-2 lg:gap-4">
           <h3>Mes projets</h3>
           <p>
-         Un pêle-mêle de mes projets réalisés en formation et certains perso 
+            Un pêle-mêle de mes projets réalisés en formation et certains perso
           </p>
         </header>
 
@@ -93,12 +90,12 @@ const cvLink: { label: string; href: string; icon: keyof typeof iconPaths }[] =
         </div>
       </section>
 
-        <div class="cta">
-          <CallToAction href="/work/">
-            Tout voir
-            <Icon icon="arrow-right" size="1.2em" />
-          </CallToAction>
-        </div>
+      <div class="cta">
+        <CallToAction href="/work/">
+          Tout voir
+          <Icon icon="arrow-right" size="1.2em" />
+        </CallToAction>
+      </div>
 
       <section class="section with-background bg-variant">
         <header class="section-header stack gap-2 lg:gap-4">
@@ -217,25 +214,27 @@ const cvLink: { label: string; href: string; icon: keyof typeof iconPaths }[] =
   }
 
   .hero img {
-    width: 280px;
-    height: 280px;
-    aspect-ratio: 1;
+    padding: 4vw;
+    width: auto;
     border-radius: 24px;
-    box-shadow:
-      0 20px 25px -5px rgba(0, 0, 0, 0.1),
-      0 10px 10px -5px rgba(0, 0, 0, 0.04);
     transition:
       transform 0.3s ease,
       box-shadow 0.3s ease;
-    object-fit: cover;
-    object-position: top;
   }
 
   .hero img:hover {
     transform: translateY(-5px);
-    box-shadow:
-      0 25px 30px -5px rgba(0, 0, 0, 0.15),
-      0 15px 15px -5px rgba(0, 0, 0, 0.08);
+  }
+
+  :root.theme-dark .hero img {
+  filter: brightness(0) invert(1);
+  }
+
+  @media (max-width: 50em) {
+    .hero img {
+      width: 50%;
+    }
+    
   }
 
   @media (min-width: 50em) {
@@ -256,10 +255,6 @@ const cvLink: { label: string; href: string; icon: keyof typeof iconPaths }[] =
       margin-top: 1rem;
     }
 
-    .hero img {
-      aspect-ratio: 4 / 3;
-      border-radius: 999rem;
-    }
   }
 
   /* ====================================================== */
@@ -367,6 +362,8 @@ const cvLink: { label: string; href: string; icon: keyof typeof iconPaths }[] =
     }
   }
 </style>
+
+<!-- /* =======================PINS GITHUB =============================== */ -->
 
 <!-- a ce moment là dans la formation pas de react donc js -->
 <script>

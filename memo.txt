@@ -1,7 +1,8 @@
-CV = Rajouter lien portfolio sur cv
-+ Mettre MysQQL et PhpMyAdmin dans les outils
-Rajouter Nextjs
-
+CV = 
+      Rajouter lien portfolio sur cv
+      + Mettre MysQQL et PhpMyAdmin dans les outils
+      Rajouter Nextjs
+      Phrase accroche alternance 
 
 ??? les backgrounds comme about ???
  * {
@@ -11,9 +12,6 @@ Rajouter Nextjs
 
 tout faire dans work et les pages ? 
 
-penser a renvoyer vers collectif nathan serval
-
-penser au at des images
 
 Rajouter anim js
 
