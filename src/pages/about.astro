@@ -55,8 +55,14 @@ import Design from "../components/Design.astro";
               de continuer à apprendre.
             </p>
             <p>
-              👨‍💻 Je fais partie du collectif &nbsp;<a href="https://www.latelier-serval.fr/le-collectif/" target="_blank"><em> Atelier Serval</em></a><br />
-              📰 J'édite le journal &nbsp;<a href="https://journal-labreche.fr/" target="_blank"><em>La Brèche </em></a>
+              👨‍💻 Je fais partie du collectif &nbsp;<a
+                href="https://www.latelier-serval.fr/le-collectif/"
+                target="_blank"><em> Atelier Serval</em></a
+              ><br />
+              📰 J'édite le journal &nbsp;<a
+                href="https://journal-labreche.fr/"
+                target="_blank"><em>La Brèche </em></a
+              >
             </p>
           </div>
         </section>
@@ -65,17 +71,16 @@ import Design from "../components/Design.astro";
           <h2 class="section-title">Technos</h2>
 
           <div class="content">
-
             <h3>Frameworks & bibliothèques</h3>
             <div class="skills-container">
               <Technos />
             </div>
-            
+
             <h3>Outils & plateformes</h3>
             <div class="skills-container">
               <Tools />
             </div>
-            
+
             <h3>Design</h3>
             <div class="skills-container">
               <Design />
@@ -105,7 +110,7 @@ import Design from "../components/Design.astro";
   }
 
   .skills-container :global(img) {
-    height: 80px; 
+    height: 80px;
     max-width: none;
   }
 
@@ -217,18 +222,19 @@ import Design from "../components/Design.astro";
     }
 
     @media (max-width: 768px) {
-  .skills-container {
-    justify-content: center;
-    gap: 0.8rem;
-    margin: 1rem 0;
-  }
-}
+      .skills-container {
+        justify-content: center;
+        gap: 0.8rem;
+        margin: 1rem 0;
+      }
+    }
 
-@media (max-width: 480px) {
-  .skills-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-  }
+    @media (max-width: 480px) {
+      .skills-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
   }
 </style>

@@ -11,17 +11,6 @@ tags:
   - User Testing
 ---
 
-
-import ImageCarousel from '../../components/ImageCarousel';
-
-
-<ImageCarousel 
-  images={[
-    { src: "/assets/work/Book.jpg", alt: "Book cover" },
-    { src: "/assets/work/Book2.jpg", alt: "Second image" }
-  ]} 
-/>
-
 ## Level-two heading
 
 > Tell me and I forget. Teach me and I remember. Involve me and I learn.

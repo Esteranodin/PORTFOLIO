@@ -12,8 +12,8 @@ CV =
 
 tout faire dans work et les pages ? 
 
-Remettre photo about
+
 
 Rajouter anim js
 
-Soucoupe volante
+Soucoupe volante // projo

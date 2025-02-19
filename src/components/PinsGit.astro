@@ -216,5 +216,7 @@ const initialRepos: GitRepo[] = new Array(6).fill({
   }
 
   // Démarrer la récupération des données
-  reposRecup();
+  document.addEventListener('DOMContentLoaded', () => {
+    reposRecup();
+  });
 </script>

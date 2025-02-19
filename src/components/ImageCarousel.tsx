@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import '../styles/caroussel.css';
 
 interface CarouselProps {
   images: {
@@ -8,20 +9,6 @@ interface CarouselProps {
 }
 
 const styles = {
-  carousel: {
-    position: 'relative' as const,
-    width: '100%',
-    maxWidth: '800px',
-    margin: '2rem auto',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  carouselImage: {
-    maxWidth: '100%',
-    height: 'auto',
-    borderRadius: '8px',
-  },
   carouselButton: {
     position: 'absolute' as const,
     top: '50%',
@@ -29,9 +16,13 @@ const styles = {
     background: 'rgba(0, 0, 0, 0.5)',
     color: 'white',
     border: 'none',
-    padding: '1rem',
+    padding: '1.5rem',
     cursor: 'pointer',
     borderRadius: '50%',
+    transition: 'background 0.3s ease',
+    '&:hover': {
+      background: 'rgba(0, 0, 0, 0.8)',
+    },
   },
   prevButton: {
     left: '1rem',
@@ -42,6 +33,12 @@ const styles = {
 };
 
 export default function ImageCarousel({ images }: CarouselProps) {
+  
+  if (!images || !Array.isArray(images) || images.length === 0) {
+    console.error('Erreur: images non valides', images);
+    return <div>Erreur de chargement du carrousel</div>;
+  }
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
@@ -57,25 +54,25 @@ export default function ImageCarousel({ images }: CarouselProps) {
   };
 
   return (
-    <div style={styles.carousel}>
-      <button 
-        onClick={prevSlide} 
-        style={{...styles.carouselButton, ...styles.prevButton}}
-      >
-        ←
-      </button>
+    <div className="carousel">
+    <button onClick={prevSlide} style={{...styles.carouselButton, ...styles.prevButton}}>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    </button>
       <img 
         src={images[currentIndex].src} 
         alt={images[currentIndex].alt} 
-        style={styles.carouselImage}
+        className="carousel-image"
       />
+      
       <button 
         onClick={nextSlide} 
-        style={{...styles.carouselButton, ...styles.nextButton}}
-      >
-        →
+        style={{...styles.carouselButton, ...styles.nextButton}}>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
       </button>
     </div>
   );
 }
-
