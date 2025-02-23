@@ -1,3 +1,11 @@
+.carousel-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 .carousel {
   position: relative;
   width: 100%;
@@ -13,29 +21,54 @@
 .carousel-image {
   width: 100%;
   height: 100%;
+  max-width: 80%;
   object-fit: contain;
-  border-radius: 8px;
 }
 
-/* Media Queries pour différentes tailles d'écran */
-@media (max-width: 768px) {
-  .carousel {
-    aspect-ratio: 4/3;
-    margin: 1rem auto;
+.carousel-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  width: 100%;
+  z-index: 10;
+}
+
+.carousel-button {
+  display: flex;
+  background: var(--gray-700);
+  color: var(--gray-0);
+  border: 1px solid var(--gray-900);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s var(--ease-in-out);
+  opacity: 0.8;
+}
+
+.carousel-button:hover, 
+.carousel-button:focus {
+  background: var(--gray-999_40);
+  border: 2px solid var(--gradient-stop-1);
+  color: var(--gradient-stop-1);
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+@media (min-width: 1200px) {
+  .carousel-buttons {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    justify-content: space-between;
+    padding: 0 1rem;
   }
   
   .carousel-button {
-    padding: 1rem !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .carousel {
-    aspect-ratio: 1/1;
-    margin: 0.5rem auto;
-  }
-  
-  .carousel-button {
-    padding: 0.75rem !important;
+    backdrop-filter: blur(4px);
   }
 }

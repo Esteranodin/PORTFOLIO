@@ -14,14 +14,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="error-404">
         <p>
           Il semble que la page que vous cherchez soit en voyage ou ait disparu
-          dans les méandres du web. <br> Peut-être a-t-elle été déplacée ou tout
-          simplement n'a-t-elle jamais existé.
+          dans les méandres du web.
         </p>
         <div>
-          <h3>
+          <h4>
             Ne vous inquiétez pas, nous allons vous aider à revenir sur le bon
             chemin !
-          </h3>
+          </h4>
           <a href="/"> Retour à l'accueil</a>
         </div>
       </div>
@@ -34,7 +33,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         gap: 1.5rem;
         padding: 2rem 5rem;
         max-width: 90%;
-        font-size: 1.5rem;
+        font-size: var(--text-xl);
         margin: 2rem auto;
         align-items: center;
         background: var(--gray-900);
@@ -43,6 +42,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       a {
         display: inline-block;
         padding: 1rem 2rem;
+        font-weight: 600;
         background-color: var(--gradient-stop-1);
         color: white;
         text-decoration: none;

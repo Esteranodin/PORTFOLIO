@@ -54,8 +54,12 @@ const projects = (await getCollection("work"))
         <header class="section-header stack gap-2 lg:gap-4">
           <h3>Mes projets</h3>
           <p>
-            Un pêle-mêle de mes projets réalisés en formation et certains perso
-          </p>
+            Un pêle-mêle de mes réalisations en développement web <br> ainsi que quelques travaux print&nbsp; 
+          <a class="link-graphism" href="/graphism/">
+          ici 
+            <Icon icon="arrows-in" size="1.2em" />
+          </a>
+        </p>
         </header>
 
         <div class="gallery">
@@ -82,8 +86,8 @@ const projects = (await getCollection("work"))
         <header class="section-header stack gap-2 lg:gap-4">
           <h3>Mes pins GitHub</h3>
           <p>
-            Mes repos GitHub préférés que j'ai choisi d'épingler sur mon profil
-            GitHub
+            Mes repos préférés qui sont épinglés sur mon profil
+            <strong>GitHub</strong>
           </p>
         </header>
 
@@ -173,7 +177,40 @@ const projects = (await getCollection("work"))
   .section-header h3 {
     font-size: var(--text-2xl);
   }
- 
+
+  .link-graphism {
+    text-decoration: none;
+    color: var(--accent-dark);
+    font-weight: bolder;
+    font-variant-caps: small-caps;
+    font-size: var(--text-xl);
+    padding: 0.2em;
+    border-radius: 0.25em;
+    background: var(--gradient-accent-orange);
+    margin: 0.5em;
+    transition: var(--theme-transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1 ;
+    gap: 0.3em;
+  }
+
+  .link-graphism :global(svg) {
+    margin-top: 0.1em;
+    vertical-align: middle;
+  }
+
+  :root.theme-dark .link-graphism {
+    color: var(--gray-999);
+  }
+
+  .link-graphism:hover,
+  .link-graphism:focus {
+    background: var(--gradient-accent);
+    box-shadow: var(--shadow-sm);
+    outline: none;
+  }
 
   @media (max-width: 50em) {
     .hero img {

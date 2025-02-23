@@ -1,0 +1,130 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+import ImageCarousel from "../components/ImageCarousel.tsx";
+---
+
+<BaseLayout
+  title="Graphisme & Édition | Marion Sabatier"
+  description="Quelques travaux réalisés"
+>
+  <div class="stack gap-20">
+    <main class="wrapper about">
+      <div class="hero-container">
+        <section>
+          <h2 class="section-title">Graphisme & Édition</h2>
+
+          <h3>Aperçu de quelques réalisations</h3>
+
+          <ImageCarousel
+            client:only="react"
+            images={[
+              {
+                src: "/assets/graphism/Logo.jpg",
+                alt: "Logo de mon entreprise",
+              },
+              {
+                src: "/assets/graphism/Cadre_photo.jpg",
+                alt: "Version colorée du logo",
+              },
+              {
+                src: "/assets/graphism/Cadre_bois.jpg",
+                alt: "Travail sur un vitrail",
+              },
+              {
+                src: "/assets/graphism/Cadre.jpg",
+                alt: "Cthulhu rouge et bleu",
+              },
+              { src: "/assets/graphism/Book.jpg", alt: "Book cover" },
+              { src: "/assets/graphism/Book2.jpg", alt: "Second book cover" },
+              {
+                src: "/assets/graphism/Cadres_2.jpg",
+                alt: "Cthulhu noir et blanc",
+              },
+              {
+                src: "/assets/graphism/Carte_visite.jpg",
+                alt: "Carte de visite de mon entreprise",
+              },
+              {
+                src: "/assets/graphism/Dog2019.jpg",
+                alt: "Réalisation d'un visuel pour un T-shirt",
+              },
+              {
+                src: "/assets/graphism/Etiquette.jpg",
+                alt: "Étiquettes pour du safran",
+              },
+              {
+                src: "/assets/graphism/FF_Carte_visite.jpg",
+                alt: "Carte de visite de l'entreprise la Fleur au Fusil",
+              },
+              {
+                src: "/assets/graphism/Journal.jpg",
+                alt: "Vue d'un numéro du journal La Brèche",
+              },
+            ]}
+          />
+        </section>
+      </div>
+    </main>
+    <ContactCTA />
+  </div>
+</BaseLayout>
+
+<style>
+  * {
+    background: var(--gray-999);
+  }
+
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    margin: 0 auto;
+  }
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    color: var(--gray-50);
+  }
+  h2 {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    margin-top: 2rem;
+    grid-column-start: 1;
+    color: var(--gray-0);
+  }
+
+  h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    opacity: 0.5;
+    width: 100%;
+    height: 0.3em;
+    bottom: 0.1em;
+    background: var(--gradient-stop-1);
+    z-index: -1;
+  }
+  h3 {
+    font-size: var(--text-xl);
+    position: relative;
+    display: block;
+    color: var(--gray-50);
+    margin-top: 2rem;
+  }
+
+  @media (min-width: 50em) {
+    section {
+      display: contents;
+      font-size: var(--text-lg);
+    }
+
+    @media (min-width: 768px) {
+    }
+    .about {
+      max-width: 65vw;
+    }
+  }
+</style>
