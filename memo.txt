@@ -9,9 +9,9 @@ CV =
     background: var(--gray-999);
   }
 
+Thème clair : revoir les liens "sociaux" du menu burger
 
-tout faire dans work et les pages ? 
-
+Remanier lien vers site sur les markdowns
 
 Rajouter anim js dont caroussel 
 

@@ -187,7 +187,7 @@ const projects = (await getCollection("work"))
     padding: 0.2em;
     border-radius: 0.25em;
     background: var(--gradient-accent-orange);
-    margin: 0.5em;
+    margin: 0.3em;
     transition: var(--theme-transition);
     display: inline-flex;
     align-items: center;
@@ -207,9 +207,13 @@ const projects = (await getCollection("work"))
 
   .link-graphism:hover,
   .link-graphism:focus {
-    background: var(--gradient-accent);
-    box-shadow: var(--shadow-sm);
+    background: transparent;
     outline: none;
+  }
+
+  :root.theme-dark  .link-graphism:hover,
+  .link-graphism:focus {
+    color: var(--gray-0);
   }
 
   @media (max-width: 50em) {

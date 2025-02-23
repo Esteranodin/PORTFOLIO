@@ -26,12 +26,11 @@ const projects = (await getCollection("work")).sort(
         align="start"
       />
       <p>
-        Ou explorez
+        Ou explorez quelques-uns de mes travaux print
         <a class="link-graphism" href="/graphism/">
           ici
           <Icon icon="arrows-in" size="1.2em" />
         </a>
-        quelques-uns de mes travaux print
       </p>
       <Grid variant="offset">
         {
@@ -50,13 +49,14 @@ const projects = (await getCollection("work")).sort(
 <style>
   .link-graphism {
     text-decoration: none;
+    background: var(--accent-overlay);
+    border: 2px solid var(--gray-0);
     color: var(--accent-dark);
     font-weight: bolder;
     font-variant-caps: small-caps;
     font-size: var(--text-xl);
-    padding: 0.2em;
+    padding: 0.3em;
     border-radius: 0.25em;
-    background: var(--gradient-accent-orange);
     margin: 0 0.5em;
     transition: var(--theme-transition);
     display: inline-flex;
@@ -72,14 +72,26 @@ const projects = (await getCollection("work")).sort(
   }
 
   :root.theme-dark .link-graphism {
+    border: 2px solid var(--accent-dark);
     color: var(--gray-999);
+    background: var(--accent-dark);
   }
 
   .link-graphism:hover,
   .link-graphism:focus {
-    background: var(--gradient-accent);
+    color: var(--accent-dark);
+    background: var(--accent-regular);
+    opacity: 0.9;
     box-shadow: var(--shadow-sm);
     outline: none;
+    border: 2px solid var(--accent-regular);
+  }
+
+  :root.theme-dark .link-graphism:hover,
+  :root.theme-dark .link-graphism:focus {
+    background-color: transparent;
+    border: 2px solid transparent;
+    color: var(--gray-0);
   }
 
   p {
