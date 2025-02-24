@@ -64,8 +64,8 @@ const { Content } = await render(entry);
             <Content />
           </div>
         </div>
-      </main>
-    </div>
+    </main>
+  </div>
     <ContactCTA />
   </div>
 </BaseLayout>
@@ -109,13 +109,14 @@ const { Content } = await render(entry);
   .description {
     font-size: var(--text-xl);
     max-width: 20em;
-	text-decoration: none;
-	font-weight: 600;
+    text-decoration: none;
+    font-weight: 600;
   }
-
+ 
   .content {
-    max-width: 65ch;
+    max-width: 55em;
     margin-inline: auto;
+    font-size: var(--text-lg);
   }
 
   .content > :global(* + *) {
@@ -131,6 +132,7 @@ const { Content } = await render(entry);
   }
 
   .content :global(img) {
+    max-width: 20em;
     border-radius: 1.5rem;
     box-shadow: var(--shadow-sm);
     background: var(--gradient-subtle);

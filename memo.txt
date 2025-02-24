@@ -1,17 +1,7 @@
-CV = 
-      Rajouter lien portfolio sur cv
-      + Mettre MysQQL et PhpMyAdmin dans les outils
-      Rajouter Nextjs
-      Phrase accroche alternance 
-
-??? les backgrounds comme about ???
- * {
-    background: var(--gray-999);
-  }
 
 Thème clair : revoir les liens "sociaux" du menu burger
 
-Remanier lien vers site sur les markdowns
+Responsive cards pins Git + augneter peut etre police about et réduire les technos ?
 
 Rajouter anim js dont caroussel 
 
