@@ -182,6 +182,10 @@ const initialRepos: GitRepo[] = new Array(6).fill({
     }
   }
 
+  function cleanRepoName(name: string): string {
+    return name.replace(/^G404\s*/, "").replace(/[_-]/g, " ");
+  }
+
   function updateRepoCards(repos: GitRepo[]) {
     const cards = document.querySelectorAll("[data-repo-card]");
 
@@ -206,7 +210,7 @@ const initialRepos: GitRepo[] = new Array(6).fill({
       });
 
       if (name && description && languageDot && languageName && image) {
-        name.textContent = repos[index].repo;
+        name.textContent = cleanRepoName(repos[index].repo);
         description.textContent =
           repos[index].description || "No description available";
         languageDot.style.backgroundColor =

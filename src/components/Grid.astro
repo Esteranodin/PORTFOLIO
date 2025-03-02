@@ -23,12 +23,6 @@ const { variant } = Astro.props;
     list-style: none;
     padding: 0;
   }
-
-  .grid.small {
-    /* grid-template-columns: 1fr 1fr; */
-    gap: 1.5rem;
-  }
-
   /* If last row contains only one item, make it span both columns. */
   .grid.small > :global(:last-child:nth-child(odd)) {
     grid-column: 1 / 3;
