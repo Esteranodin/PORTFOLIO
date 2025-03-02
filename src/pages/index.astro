@@ -54,11 +54,12 @@ const projects = (await getCollection("work"))
         <header class="section-header stack gap-2 lg:gap-4">
           <h3>Mes projets</h3>
           <p>
-            Un pêle-mêle de mes réalisations en développement web <br> ainsi que quelques travaux print&nbsp; 
-          <a class="link-graphism" href="/graphism/">
-          ici 
-            <Icon icon="arrows-in" size="1.2em" />
-          </a>
+           Quelques travaux print&nbsp; 
+           <a class="link-graphism" href="/graphism/">
+           ici 
+             <Icon icon="arrows-in" size="1.2em" />
+           </a> <br>
+           Et ci-dessous, un pêle-mêle de mes réalisations en développement web 
         </p>
         </header>
 
@@ -172,6 +173,7 @@ const projects = (await getCollection("work"))
     max-width: 50ch;
     font-size: var(--text-md);
     color: var(--gray-300);
+    margin-bottom: 2rem;
   }
 
   .section-header h3 {
@@ -184,10 +186,10 @@ const projects = (await getCollection("work"))
     font-weight: bolder;
     font-variant-caps: small-caps;
     font-size: var(--text-xl);
-    padding: 0.2em;
+    padding: 0 0.3em;
     border-radius: 0.25em;
-    background: var(--gradient-accent-orange);
-    margin: 0.3em;
+    background: var(--button-color);
+    margin: 0.2em;
     transition: var(--theme-transition);
     display: inline-flex;
     align-items: center;

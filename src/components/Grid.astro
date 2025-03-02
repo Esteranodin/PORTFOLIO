@@ -25,7 +25,7 @@ const { variant } = Astro.props;
   }
 
   .grid.small {
-    grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr; */
     gap: 1.5rem;
   }
 
@@ -54,13 +54,6 @@ const { variant } = Astro.props;
     .grid.offset > :global(:last-child:nth-child(odd)) {
       grid-column: 2 / 3;
       transform: none;
-    }
-
-    .grid.small {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 4rem;
     }
 
     .grid.small > :global(*) {
