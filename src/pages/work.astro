@@ -22,7 +22,7 @@ const projects = (await getCollection("work")).sort(
     <main class="wrapper stack gap-8">
       <Hero
         title="Mes projets"
-        tagline="Voici quelques projets réalisés dans le cadre de ma formation"
+        tagline="Exemples de projets réalisés dans le cadre de la formation : Développeuse Web (titre RNCP)"
         align="start"
       />
 
@@ -63,18 +63,10 @@ const projects = (await getCollection("work")).sort(
     text-align: center;
   }
 
-  :root.theme-dark .link-graphism {
-    color: var(--gray-999);
-  }
-
   .link-graphism:hover,
   .link-graphism:focus {
     background: transparent;
     outline: none;
-  }
-
-  :root.theme-dark  .link-graphism:hover,
-  .link-graphism:focus {
     color: var(--gray-0);
   }
 
