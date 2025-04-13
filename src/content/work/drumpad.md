@@ -1,6 +1,6 @@
 ---
 title: Drumpad
-publishDate: février 2025
+publishDate: janvier 2025
 img: /assets/work/drumpad.jpg
 img_alt: Vue du site
 link: https://marion-drumpad.pro4.garage404.com/

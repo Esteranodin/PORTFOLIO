@@ -25,11 +25,11 @@ const projects = (await getCollection("work"))
 ---
 
 <BaseLayout>
-  <div class="stack gap-20 lg:gap-48">
+  <div class="stack gap-20 lg:gap-30">
     <div class="wrapper stack gap-8 lg:gap-20">
       <header class="hero">
         <Hero
-          title="Développeuse web // Junior"
+          title="Développeuse web // premier portfolio"
           tagline="Actuellement en formation"
           align="start"
         >
@@ -40,10 +40,7 @@ const projects = (await getCollection("work"))
             <!-- <Cv> -->
           </div>
         </Hero>
-        <img
-          alt="logo de Marion Sabatier"
-          src="/assets/logo.png"
-        />
+        <img alt="logo de Marion Sabatier" src="/assets/logo.png" />
       </header>
 
       <Skills />
@@ -52,15 +49,7 @@ const projects = (await getCollection("work"))
     <main class="wrapper stack gap-20 lg:gap-30">
       <section class="section with-background with-cta">
         <header class="section-header stack gap-2 lg:gap-4">
-          <h3>Mes projets</h3>
-          <p>
-           Quelques travaux print&nbsp; 
-           <a class="link-graphism" href="/graphism/">
-           ici 
-             <Icon icon="arrows-in" size="1.2em" />
-           </a> <br>
-           Et ci-dessous, un pêle-mêle de mes réalisations en développement web 
-        </p>
+          <h3>Projets</h3>
         </header>
 
         <div class="gallery">
@@ -82,6 +71,11 @@ const projects = (await getCollection("work"))
           <Icon icon="arrow-right" size="1.2em" />
         </CallToAction>
       </div>
+      <article>
+        <a class="link-graphism" href="/graphism">
+          Quelques travaux print&nbsp; ici
+        </a>
+      </article>
 
       <section class="section with-background bg-variant">
         <header class="section-header stack gap-2 lg:gap-4">
@@ -93,193 +87,177 @@ const projects = (await getCollection("work"))
         </header>
 
         <div class="gallery">
-          <PinsGit>
-          </div>
-       
+          <PinsGit />
+        </div>
       </section>
+
+      <ContactCTA />
     </main>
-
-    <ContactCTA />
   </div>
-</BaseLayout>
 
-<style>
-   .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-  }
-
-  .roles {
-    display: none;
-  }
-
-  .roles-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    align-items: center;
-  }
-
-  .hero img {
-    padding: 4vw;
-    width: auto;
-    border-radius: 24px;
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
-  }
-
-  .hero img:hover {
-    transform: translateY(-5px);
-  }
-
-  :root.theme-dark .hero img {
-  filter: brightness(0) invert(1);
-  }
-
-   .with-background {
-    position: relative;
-  }
-
-  .with-background::before {
-    --hero-bg: var(--bg-image-subtle-2);
-
-    content: "";
-    position: absolute;
-    pointer-events: none;
-    left: 50%;
-    width: 100vw;
-    aspect-ratio: calc(2.25 / var(--bg-scale));
-    top: 0;
-    transform: translateY(-80%) translateX(-50%);
-    background:
-      url("/assets/backgrounds/noise.png") top center/220px repeat,
-      /* var(--hero-bg) center center / var(--bg-gradient-size) no-repeat, */
-        var(--gray-999);
-    /* background-blend-mode: overlay, normal, normal, normal; */
-    mix-blend-mode: var(--bg-blend-mode);
-    z-index: -1;
-  }
-
-  .with-background.bg-variant::before {
-    --hero-bg: var(--bg-image-subtle-1);
-  }
-
-  .section-header {
-    justify-self: center;
-    text-align: center;
-    max-width: 50ch;
-    font-size: var(--text-md);
-    color: var(--gray-300);
-    margin-bottom: 2rem;
-  }
-
-  .section-header h3 {
-    font-size: var(--text-2xl);
-  }
-
-  .link-graphism {
-    text-decoration: none;
-    color: var(--accent-dark);
-    font-weight: bolder;
-    font-variant-caps: small-caps;
-    font-size: var(--text-xl);
-    padding: 0 0.3em;
-    border-radius: 0.25em;
-    background: var(--button-color);
-    margin: 0.2em;
-    transition: var(--theme-transition);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1 ;
-    gap: 0.3em;
-  }
-
-  .link-graphism :global(svg) {
-    margin-top: 0.1em;
-    vertical-align: middle;
-  }
-
-  :root.theme-dark .link-graphism {
-    color: var(--gray-999);
-  }
-
-  .link-graphism:hover,
-  .link-graphism:focus {
-    background: transparent;
-    outline: none;
-  }
-
-  :root.theme-dark  .link-graphism:hover,
-  .link-graphism:focus {
-    color: var(--gray-0);
-  }
-
-  @media (max-width: 50em) {
-    .hero img {
-      width: 50%;
-    }
-    
-  }
-
-  @media (min-width: 50em) {
+  <style>
     .hero {
-      display: grid;
-      grid-template-columns: 6fr 4fr;
-      padding-inline: 2.5rem;
-      gap: 3.75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
     }
 
     .roles {
-      margin-top: 1rem;
-      display: flex;
-      gap: 1rem;
+      display: none;
     }
 
     .roles-container {
-      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
     }
 
-    .section {
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-areas: "header header header header" "gallery gallery gallery gallery";
-      gap: 5rem;
-      display: grid;
+    .hero img {
+      padding: 4vw;
+      width: auto;
+      border-radius: 24px;
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
     }
 
-    .section.with-cta {
-      grid-template-areas: "header header header cta" "gallery gallery gallery gallery";
+    .hero img:hover {
+      transform: translateY(-5px);
     }
 
-    
+    :root.theme-dark .hero img {
+      filter: brightness(0) invert(1);
+    }
+
+    .with-background {
+      position: relative;
+    }
+
+    .with-background::before {
+      --hero-bg: var(--bg-image-subtle-2);
+
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      left: 50%;
+      width: 100vw;
+      aspect-ratio: calc(2.25 / var(--bg-scale));
+      top: 0;
+      transform: translateY(-80%) translateX(-50%);
+      background:
+        url("/assets/backgrounds/noise.png") top center/220px repeat,
+        /* var(--hero-bg) center center / var(--bg-gradient-size) no-repeat, */
+          var(--gray-999);
+      /* background-blend-mode: overlay, normal, normal, normal; */
+      mix-blend-mode: var(--bg-blend-mode);
+      z-index: -1;
+    }
+
+    .with-background.bg-variant::before {
+      --hero-bg: var(--bg-image-subtle-1);
+    }
+
     .section-header {
-      grid-area: header;
-      font-size: var(--text-lg);
+      justify-self: center;
+      text-align: center;
+      max-width: 50ch;
+      font-size: var(--text-md);
+      color: var(--gray-300);
+      margin-bottom: 2rem;
     }
 
     .section-header h3 {
-      font-size: var(--text-4xl);
+      font-size: var(--text-2xl);
     }
 
-    .with-cta .section-header {
-      justify-self: flex-start;
-      text-align: left;
+    .link-graphism {
+      text-decoration: none;
+      background: var(--button-color);
+      border: 2px solid var(--button-color);
+      color: var(--gray-999);
+      font-weight: bolder;
+      font-size: var(--text-lg);
+      padding: 0.5em;
+      border-radius: 0.25em;
+      transition: var(--theme-transition);
+      width: fit-content;
+      text-align: center;
     }
 
-    .cta {
-      grid-area: cta;
-      width: 50%;
+    :root.theme-dark .link-graphism {
+      color: var(--gray-999);
     }
 
-    .gallery {
-      grid-area: gallery;
+    .link-graphism:hover,
+    .link-graphism:focus {
+      background: transparent;
+      outline: none;
     }
-  }
 
- 
-</style>
+    :root.theme-dark .link-graphism:hover,
+    .link-graphism:focus {
+      color: var(--gray-0);
+    }
 
+    @media (max-width: 50em) {
+      .hero img {
+        width: 50%;
+      }
+    }
 
+    @media (min-width: 50em) {
+      .hero {
+        display: grid;
+        grid-template-columns: 6fr 4fr;
+        padding-inline: 2.5rem;
+        gap: 3.75rem;
+      }
+
+      .roles {
+        margin-top: 1rem;
+        display: flex;
+        gap: 1rem;
+      }
+
+      .roles-container {
+        margin-top: 1rem;
+      }
+
+      .section {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: "header header header header" "gallery gallery gallery gallery";
+        gap: 5rem;
+        display: grid;
+      }
+
+      .section.with-cta {
+        grid-template-areas: "header header header cta" "gallery gallery gallery gallery";
+      }
+
+      .section-header {
+        grid-area: header;
+        font-size: var(--text-lg);
+      }
+
+      .section-header h3 {
+        font-size: var(--text-4xl);
+      }
+
+      .with-cta .section-header {
+        justify-self: flex-start;
+        text-align: left;
+      }
+
+      .cta {
+        grid-area: cta;
+        width: 30%;
+      }
+
+      .gallery {
+        grid-area: gallery;
+      }
+    }
+  </style>
+</BaseLayout>
