@@ -6,7 +6,7 @@ const cvLink: { label: string; href: string; icon: keyof typeof iconPaths }[] =
   [
     {
       label: "cv",
-      href: "",
+      href: "./assets/cv_marion_sabatier.pdf",
       icon: "cv",
     },
   ];
@@ -24,7 +24,7 @@ const cvLink: { label: string; href: string; icon: keyof typeof iconPaths }[] =
 
 <style>
   .cv-link a {
-    color: var(--accent-regular);
+    color:  var(--gray-0);
     text-decoration: none;
     cursor: pointer;
     border: none;
@@ -68,7 +68,7 @@ const cvLink: { label: string; href: string; icon: keyof typeof iconPaths }[] =
   }
 
   .cv-link a:hover:before {
-    border-color: var(--gray-700);
+    border-color: var(--accent-regular);
     height: 100%;
     transform: translateX(0);
     transition:
@@ -77,7 +77,7 @@ const cvLink: { label: string; href: string; icon: keyof typeof iconPaths }[] =
   }
 
   .cv-link a:hover:after {
-    border-color: var(--gray-100);
+    border-color: var(--accent-regular);
     height: 100%;
     transform: translateX(0);
     transition:
