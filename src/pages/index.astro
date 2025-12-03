@@ -29,16 +29,16 @@ const projects = (await getCollection("work"))
     <div class="wrapper stack gap-8 lg:gap-20">
       <header class="hero">
         <Hero
-          title="Développeuse web"
-          tagline="Premier portfolio"
-          align="start"
+        title="Développeuse web"
+        tagline="// Premier portfolio"
+        align="start"
         >
+        <!-- <Cv /> -->
           <div class="roles-container">
             <Pill><Icon icon="code" size="1.33em" /> Code </Pill>
             <Pill><Icon icon="color-picker" size="1.33em" />Graphisme</Pill>
             <Pill><Icon icon="pencil-line" size="1.33em" />Rédaction</Pill>
           </div>
-          <Cv />
         </Hero>
         <img alt="logo de Marion Sabatier" src="/assets/logo.png" />
       </header>
@@ -112,7 +112,10 @@ const projects = (await getCollection("work"))
       flex-wrap: wrap;
       gap: 1rem;
       align-items: center;
+      border-top: 2px solid var(--gray-300);
+      width: calc(100% - 4.5rem); 
     }
+
 
     .hero img {
       padding: 4vw;

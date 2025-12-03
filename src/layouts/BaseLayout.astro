@@ -25,7 +25,13 @@ const { title, description } = Astro.props;
       <slot />
       <Footer />
 
-      <button id="back-to-top" class="back-to-top">↑ To Top</button>
+      <button id="back-to-top"
+        class="back-to-top"
+        aria-label="Retour en haut">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 15l7-7 7 7" />
+        </svg>
+      </button>
     </div>
 
     <script>
@@ -142,18 +148,24 @@ const { title, description } = Astro.props;
       .back-to-top {
         display: none;
         position: fixed;
-        bottom: 20px;
+        bottom: 50px;
         right: 20px;
         background-color: var(--accent-regular);
-        color: var(--accent-text-over);
+        color: var(--back-to-top);
         border: none;
-        padding: 10px 15px;
-        border-radius: 5px;
+        padding: 0.55rem;                
+        border-radius: 50%;
         cursor: pointer;
         z-index: 1000;
-        margin-bottom: 6rem;
-        box-shadow: var(--shadow-sm);
+        box-shadow: none;
         transition: transform var(--theme-transition);
+        align-items: center;
+        justify-content: center;
+      }
+      .back-to-top svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        display: block;
       }
       .back-to-top:hover {
         transform: scale(1.1);
