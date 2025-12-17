@@ -41,6 +41,10 @@ import Icon from './Icon.astro';
 		border-radius: 999rem;
 	}
 
+	:global(.theme-dark) .icon {
+    color: var(--accent-text-over);
+}
+
 	:global(.theme-dark) .icon.light::before {
 		transform: translateX(100%);
 	}

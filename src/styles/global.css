@@ -35,7 +35,7 @@
 	--gradient-accent: linear-gradient(150deg,
 			var(--gradient-stop-1),
 			var(--gradient-stop-2));
-	--gradient-accent-orange: linear-gradient(150deg, #0a9969 19%, var(--gray-700) 150%);
+	--gradient-accent-orange: linear-gradient(150deg, var(--accent-light), var(--gray-700) 150%);
 	--gradient-stroke: linear-gradient(180deg, var(--gray-900), var(--gray-700));
 
 	/* Shadows */
@@ -85,7 +85,7 @@
 	--gray-999-op: #050e10ad;
 
 	--accent-light: #071E22;
-	--accent-regular: #0a9969;
+	--accent-regular: #078080;
 	--accent-dark: #FCDFA6;
 	--accent-overlay: #F15BB5(144, 89%, 67%, 0.33);
 	--accent-subtle-overlay: var(--accent-overlay);
