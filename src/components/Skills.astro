@@ -1,74 +1,91 @@
 ---
-import CallToAction from './CallToAction.astro';
-import Icon from './Icon.astro';
+import CallToAction from "./CallToAction.astro";
+import Icon from "./Icon.astro";
 ---
 
 <section class="box skills">
-	<div class="stack gap-2 lg:gap-4">
-		<Icon icon="terminal-window" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Curiosité</h2>
-		<p>Toujours envie de découvrir et d'apprendre&nbsp;!</p>
-	</div>
-	<div class="stack gap-2 lg:gap-4">
-		<Icon icon="trophy" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Esprit d'équipe</h2>
-		<p>Convaincue que la communication & la mise en commun des compétence est la clef du succès</p>
-	</div>
-	<div class="stack gap-2 lg:gap-4">
-		<Icon icon="strategy" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Expérience</h2>
-		<p>Forte de plusieurs années d'expérience, je peux mettre à profit mes <em>soft skills</em>.</p>
-	</div>
-	<div class="cta">
-		<CallToAction href="/about/">
-		  En savoir plus sur moi
-		</CallToAction>
-	  </div>
+  <div class="stack gap-2 lg:gap-4">
+    <Icon
+      icon="terminal-window"
+      color="var(--accent-regular)"
+      size="2.5rem"
+      gradient
+    />
+    <h2>Curiosité</h2>
+    <p>
+      Toujours envie de découvrir et d'apprendre&nbsp;! <br />
+      Être en veille et continuer à se former soi-même sont les raisons pour lesquelles
+      je me suis tournée vers le dev.
+    </p>
+  </div>
+  <div class="stack gap-2 lg:gap-4">
+    <Icon icon="trophy" color="var(--accent-regular)" size="2.5rem" gradient />
+    <h2>Esprit d'équipe</h2>
+    <p>
+      Je suis convaincue que la communication et la mise en commun des compétences est la
+      clef du succès.
+    </p>
+  </div>
+  <div class="stack gap-2 lg:gap-4">
+    <Icon
+      icon="strategy"
+      color="var(--accent-regular)"
+      size="2.5rem"
+      gradient
+    />
+    <h2>Expérience</h2>
+    <p>
+      Forte de plusieurs années d'expérience, notamment comme graphiste (auto-entrepreneuse), je peux mettre à profit mes <em>soft skills</em>.
+    </p>
+  </div>
+  <div class="cta">
+    <CallToAction href="/about/"> En savoir plus sur moi </CallToAction>
+  </div>
 </section>
 
 <style>
-	.box {
-		border: 1px solid var(--gray-800);
-		border-radius: 0.75rem;
-		padding: 1.5rem;
-		background-color: var(--gray-999);
-		box-shadow: var(--shadow-sm);
-	}
+  .box {
+    border: 1px solid var(--gray-800);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    background-color: var(--gray-999);
+    box-shadow: var(--shadow-sm);
+  }
 
-	.skills {
-		display: flex;
-		flex-direction: column;
-		gap: 3rem;
-	}
+  .skills {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
 
-	.skills h2 {
-		font-size: var(--text-lg);
-	}
+  .skills h2 {
+    font-size: var(--text-lg);
+  }
 
-	.skills p {
-		font-size: var(--text-md);
-		color: var(--gray-400);
-		font-weight: 600;
-	}
+  .skills p {
+    font-size: var(--text-md);
+    color: var(--gray-400);
+    font-weight: 600;
+  }
 
-	@media (min-width: 50em) {
-		.box {
-			border-radius: 1.5rem;
-			padding: 2.5rem;
-		}
+  @media (min-width: 50em) {
+    .box {
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+    }
 
-		.skills {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-		}
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
 
-		.skills h2 {
-			font-size: var(--text-2xl);
-		}
+    .skills h2 {
+      font-size: var(--text-2xl);
+    }
 
-		.cta {
-			grid-column: span 3;
-			justify-self: right;
-		}
-	}
+    .cta {
+      grid-column: span 3;
+      justify-self: right;
+    }
+  }
 </style>

@@ -14,7 +14,7 @@
 	--gray-900: #D8E0E2;
 	--gray-999-basis: 0, 0%, 100%;
 	--gray-999_40: hsla(var(--gray-999-basis), 0.4);
-	--gray-999: #F1EDE9;
+	--gray-999: #fff7fe;
 
 	--accent-light: #078080;
 	--accent-regular: #F15BB5;
@@ -24,8 +24,9 @@
 	--accent-text-over: var(--gray-999);
 
 	--link-color: var(--accent-regular);
-	--button-color: #B54FA1;
+	--button-color: var(--accent-regular);
 	--back-to-top: #D8E0E2;
+	--bg : #fdfdfd;
 
 	/* Gradients */
 	--gradient-stop-1: var(--accent-light);
@@ -35,7 +36,7 @@
 	--gradient-accent: linear-gradient(150deg,
 			var(--gradient-stop-1),
 			var(--gradient-stop-2));
-	--gradient-accent-btn: linear-gradient(170deg, var(--accent-light), var(--gray-900) 120%);
+	--gradient-accent-btn: linear-gradient(170deg, var(--accent-regular), var(--gray-900) 120%);
 	--gradient-stroke: linear-gradient(180deg, var(--gray-900), var(--gray-700));
 
 	/* Shadows */
@@ -81,7 +82,7 @@
 	--gray-800: #0F272B;
 	--gray-900: #071E22;
 	--gray-999-basis: 225, 31%, 5%;
-	--gray-999: #050E10;
+	--gray-999: #050f06;
 	--gray-999-op: #050e10ad;
 
 	--accent-light: #071E22;
@@ -92,12 +93,13 @@
 	--accent-text-over: var(--gray-0);
 
 	--link-color: var(--accent-dark);
-	--button-color: #f9bc60;
+	--button-color: var(--accent-regular);
 	--back-to-top: #D8E0E2;
+	--bg: #050d0f;
 
 	--gradient-stop-1: #F15BB5;
 	--gradient-subtle: linear-gradient(150deg, var(--gray-900) 19%, var(--gray-999) 81%);
-	--gradient-accent-btn: linear-gradient(150deg, var(--gradient-stop-1) 19%, var(--gray-100) 150%);
+	--gradient-accent-btn: linear-gradient(150deg, var(--accent-regular) 19%, var(--gray-100) 150%);
 	--gradient-stroke: linear-gradient(180deg, var(--gray-600), var(--gray-800));
 
 	--shadow-xs: 0px 3px 3px rgba(255, 255, 255, 0.01), 0px 2px 2px rgba(255, 255, 255, 0.01),
