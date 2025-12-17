@@ -35,7 +35,7 @@
 	--gradient-accent: linear-gradient(150deg,
 			var(--gradient-stop-1),
 			var(--gradient-stop-2));
-	--gradient-accent-orange: linear-gradient(150deg, var(--accent-light), var(--gray-700) 150%);
+	--gradient-accent-btn: linear-gradient(170deg, var(--accent-light), var(--gray-900) 120%);
 	--gradient-stroke: linear-gradient(180deg, var(--gray-900), var(--gray-700));
 
 	/* Shadows */
@@ -97,7 +97,7 @@
 
 	--gradient-stop-1: #F15BB5;
 	--gradient-subtle: linear-gradient(150deg, var(--gray-900) 19%, var(--gray-999) 81%);
-	--gradient-accent-orange: linear-gradient(150deg, var(--gradient-stop-1) 19%, var(--gray-100) 150%);
+	--gradient-accent-btn: linear-gradient(150deg, var(--gradient-stop-1) 19%, var(--gray-100) 150%);
 	--gradient-stroke: linear-gradient(180deg, var(--gray-600), var(--gray-800));
 
 	--shadow-xs: 0px 3px 3px rgba(255, 255, 255, 0.01), 0px 2px 2px rgba(255, 255, 255, 0.01),

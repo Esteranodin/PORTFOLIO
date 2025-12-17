@@ -22,22 +22,18 @@ const { href } = Astro.props;
 		line-height: 1.1;
 		border-radius: 999rem;
 		overflow: hidden;
-		background: var(--gradient-accent-orange);
+		background: var(--gradient-accent-btn);
 		box-shadow: var(--shadow-sm);
 		white-space: nowrap;
 		font-size: var(--text-md); 
 	}
 	
 	a:nth-child(2) {
-		background: var(--gradient-accent-orange);
+		background: var(--gradient-accent-btn);
 	}
 
 	:global(.theme-dark) a {
-		color: var(--gray-999);
-	}
-
-	:global(.theme-dark) a:nth-child(2) {
-		background: var(--gradient-accent-orange);
+		color: var(--gray-900);
 	}
 
 	@media (min-width: 20em) {
@@ -58,13 +54,13 @@ const { href } = Astro.props;
 
 	a:focus::after,
 	a:hover::after {
-		background-color: hsla(var(--gray-999-basis), 0.1);
+		background-color: var(--gray-500);
 	}
 
 	@media (min-width: 50em) {
 		a {
 			padding: 0.75rem 1.75rem; 
-			font-size: var(--text-xl); 
+			font-size: var(--text-xl); 			
 		}
 	}
 

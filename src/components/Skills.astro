@@ -7,7 +7,7 @@ import Icon from './Icon.astro';
 	<div class="stack gap-2 lg:gap-4">
 		<Icon icon="terminal-window" color="var(--accent-regular)" size="2.5rem" gradient />
 		<h2>Curiosité</h2>
-		<p>Toujours envie de découvrir et d'apprendre !</p>
+		<p>Toujours envie de découvrir et d'apprendre&nbsp;!</p>
 	</div>
 	<div class="stack gap-2 lg:gap-4">
 		<Icon icon="trophy" color="var(--accent-regular)" size="2.5rem" gradient />
@@ -21,17 +21,12 @@ import Icon from './Icon.astro';
 	</div>
 	<div class="cta">
 		<CallToAction href="/about/">
-		  En savoir plus
-		  <Icon icon="arrow-right" size="1.2em" />
+		  En savoir plus sur moi
 		</CallToAction>
 	  </div>
 </section>
 
 <style>
-	.span {
-		text
-	}
-
 	.box {
 		border: 1px solid var(--gray-800);
 		border-radius: 0.75rem;
@@ -51,6 +46,7 @@ import Icon from './Icon.astro';
 	}
 
 	.skills p {
+		font-size: var(--text-md);
 		color: var(--gray-400);
 		font-weight: 600;
 	}
@@ -68,6 +64,11 @@ import Icon from './Icon.astro';
 
 		.skills h2 {
 			font-size: var(--text-2xl);
+		}
+
+		.cta {
+			grid-column: span 3;
+			justify-self: right;
 		}
 	}
 </style>
